@@ -94,7 +94,7 @@ Choose some colours and make a plot:
 
 ``` r
 cols=brewer.pal(n=9,name="Set1")
-cols_palette =c(cols[1], cols[5], cols[9])
+cols_palette = c(cols[1], cols[5], cols[9])
 cols_iris <- cols_palette[iris$Species]
 plot(iris$Sepal.Length, iris$Sepal.Width, col=cols_iris, pch=19)
 ```
@@ -134,9 +134,8 @@ iris$Collapsed_species[iris$Species %in% c("Iris-virginica","Iris-versicolor")] 
 Plot the data again to check that transformation worked as expected:
 
 ``` r
-cols=brewer.pal(n=9,name="Set1")
-cols_palette =c(cols[1], 0, 0, cols[9])
-cols_collapsed_iris <- cols_palette[iris$Collapsed_species]
+cols_palette_2 = c(cols[1], 0, 0, cols[9])
+cols_collapsed_iris <- cols_palette_2[iris$Collapsed_species]
 plot(iris$Sepal.Length, iris$Sepal.Width, col=cols_collapsed_iris, pch=19)
 ```
 
