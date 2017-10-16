@@ -8,7 +8,7 @@
 
 [Exploring the scikit-learn iris dataset, K-Nearest Neighbours](https://github.com/jamesharrop/machine_learning/blob/master/Python_machine_learning/Iris.ipynb)
 
-[K-fold cross validation on the iris dataset - link to GitHub repo](https://github.com/jamesharrop/machine_learning/blob/master/Python_machine_learning/K_fold.ipynb)
+[K-fold cross validation on the iris dataset](https://github.com/jamesharrop/machine_learning/blob/master/Python_machine_learning/K_fold.ipynb)
 
 ## Swift
 [Linear Regression in Swift](http://www.jharrop.com/machine_learning/for_feed/2017/09/18/swift-linear-regression.html)
