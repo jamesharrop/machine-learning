@@ -25,6 +25,57 @@ dim(iris)
 
     ## [1] 150   5
 
+``` r
+summary(iris)
+```
+
+    ##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+    ##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+    ##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+    ##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+    ##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+    ##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+    ##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+    ##        Species  
+    ##  setosa    :50  
+    ##  versicolor:50  
+    ##  virginica :50  
+    ##                 
+    ##                 
+    ## 
+
+``` r
+table(iris$Species)
+```
+
+    ## 
+    ##     setosa versicolor  virginica 
+    ##         50         50         50
+
+``` r
+str(iris)
+```
+
+    ## 'data.frame':    150 obs. of  5 variables:
+    ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+    ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+    ##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+    ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+    ##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+
+``` r
+names(iris)
+```
+
+    ## [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width" 
+    ## [5] "Species"
+
+``` r
+hist(iris$Sepal.Length)
+```
+
+![](R_exploring_iris_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-1-1.png)
+
 Create a scatter plot
 ---------------------
 
@@ -66,3 +117,27 @@ scatterplot3d(iris$Sepal.Length, iris$Sepal.Width, iris$Petal.Length, color = co
 ```
 
 ![](R_exploring_iris_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-5-1.png)
+
+Try collecting Virginica and Versicolor together as they do not appear linearly separable.
+
+``` r
+# Copy the Species column to a new column Collapsed_species
+iris$Collapsed_species <- iris$Species
+
+# Add a new level to the factor
+levels(iris$Collapsed_species) <- c(levels(iris$Collapsed_species), "Virginica-or-Versicolor")
+
+# Collapse the species levels into Collapsed_species
+iris$Collapsed_species[iris$Species %in% c("Iris-virginica","Iris-versicolor")] <-"Virginica-or-Versicolor"
+```
+
+Plot the data again to check that transformation worked as expected:
+
+``` r
+cols=brewer.pal(n=9,name="Set1")
+cols_palette =c(cols[1], 0, 0, cols[9])
+cols_collapsed_iris <- cols_palette[iris$Collapsed_species]
+plot(iris$Sepal.Length, iris$Sepal.Width, col=cols_collapsed_iris, pch=19)
+```
+
+![](R_exploring_iris_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-7-1.png)
