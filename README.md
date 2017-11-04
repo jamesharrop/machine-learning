@@ -4,6 +4,9 @@
 [Exploring the iris dataset using R](https://github.com/jamesharrop/machine_learning/blob/master/R_machine_learning/R_exploring_iris.md)
 
 ## Python
+
+[Stacking a Light GBM model and a simple neural network](https://github.com/jamesharrop/machine_learning/blob/master/Python_machine_learning/Stacking_models.ipynb)
+
 [Logistic Regression, a simple example and scikit-learn](http://www.jharrop.com/machine_learning/for_feed/2017/09/20/logistic-regression.html)
 
 [Exploring the scikit-learn iris dataset, K-Nearest Neighbours](https://github.com/jamesharrop/machine_learning/blob/master/Python_machine_learning/Iris.ipynb)
