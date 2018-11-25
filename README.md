@@ -22,4 +22,4 @@ A matrix struct data type to simplify linear algebra using the Accelerate framew
 [A Swift implementation of the Newton-Raphson method](https://github.com/jamesharrop/newton-raphson)
 An implementation of the Newton-Raphson method for finding the roots of a mathematical function.
 
-[Using coremltools to convert a scikit-learn model to Core ML format](http://www.jharrop.com/machine_learning/for_feed/2017/09/22/core-ml.html)
+[Using coremltools to convert a scikit-learn model to Core ML format](https://github.com/jamesharrop/jamesharrop.github.io/blob/master/_posts/2017-09-22-core-ml.markdown)
